@@ -3,7 +3,6 @@ function find_and_replace(class_name, text) {
     var size = elements.length;
     for ( var i = 0; i < size ; i++) {
         elements[i].value = elements[i].value.replace(text, '');
-        elements[i].jsaction = '';
         elements[i].my_param = text;
         elements[i].addEventListener("keydown", function(event) {
             // event.preventDefault();

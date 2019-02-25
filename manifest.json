@@ -1,7 +1,7 @@
 {
 "name":"Google filter by Lapshin",
 "description":"Remove freak sites from your searching results",
-"version":"1",
+"version":"0.0.1",
 "manifest_version":2,
 "content_scripts": [
     {

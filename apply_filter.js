@@ -19,21 +19,21 @@ function find_and_replace(class_name, text) {
 }
 
 if (document.title.indexOf("Google") != -1) {
-    testArray = [""];
+    filterSitesArray = [""];
     chrome.storage.sync.get({
-            list:testArray},
+            filterSites:filterSitesArray},
         function(data) {
-            testArray = data.list;
+            filterSitesArray = data.filterSites;
 
-            if(testArray.length == 0 || testArray[0].localeCompare("") == 0) {
+            if(filterSitesArray.length == 0 || filterSitesArray[0].localeCompare("") == 0) {
                 console.log("Empty storage");
                 return;
             }
 
             var filterLine = "";
-            for(var i = 0; i < testArray.length; i++)
+            for(var i = 0; i < filterSitesArray.length; i++)
             {
-                filterLine = filterLine.concat("-site:" + testArray[i] + " ");
+                filterLine = filterLine.concat("-site:" + filterSitesArray[i] + " ");
             }
             
             document.title = document.title.replace(filterLine, '');
